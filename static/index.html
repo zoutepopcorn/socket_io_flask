@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<title>Hello World Template</title>
+</head>
+<body>
+Hello Flask
+
+<script src="sock.js"></script>
+<script>
+var socket = io(window.location.host);
+console.log("connect?");
+
+socket.on('msg', function (data) {
+console.log(data);
+socket.emit('msg', { my: 'data' });
+});
+</script>
+
+</body>
+</html>
